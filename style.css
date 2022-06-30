@@ -1,0 +1,108 @@
+body {
+  margin: 0;
+  position: relative;
+  padding-top: 250px;
+  background-color: hsla(180, 52%, 96%, 1);
+  font-family: "League Spartan", sans-serif;
+}
+
+header {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  height: 200px;
+  background-image: url("images/bg-header-desktop.svg");
+  background-size: cover;
+  background-color: hsla(180, 29%, 50%, 1);
+}
+
+header > img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 3;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+.job-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card {
+  width: 80%;
+  height: 100px;
+  background-color: white;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.job-description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.company {
+  margin-bottom: 10px;
+}
+
+.job-position {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.feature {
+  background-color: green;
+  padding: 3px;
+  border-radius: 10%;
+  margin: 0px 10px;
+}
+
+.new {
+  background-color: yellow;
+  padding: 3px;
+  border-radius: 10%;
+  margin: 0px 10px;
+}
+
+.job-conditons {
+  color: grey;
+}
+
+.dot {
+}
+
+.requirements {
+  margin: 10px;
+  color: hsl(180, 29%, 50%);
+  font-weight: bold;
+}
+
+.languages *,
+.skills {
+  background-color: hsl(180, 52%, 96%);
+  padding: 5px;
+  margin-right: 5px;
+}
+
+.job-description > div {
+}
+
+.display-flex {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
