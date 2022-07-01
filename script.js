@@ -67,7 +67,7 @@ let rederNew = (i, feat, neww, languages, tools) => {
 
   for (let i = 0; i < languages.length; i++) {
     const languageTyp = languages[i];
-    languagesId.innerHTML += `<span onclick="filter(${i}, ${languageTyp})"  style = "margin-right: 5px;">${languageTyp}</span>`;
+    languagesId.innerHTML += `<span onclick="filter('${languageTyp}')"  style = "margin-right: 5px;">${languageTyp}</span>`;
   }
   if (tools) {
     for (let i = 0; i < tools.length; i++) {
@@ -77,13 +77,23 @@ let rederNew = (i, feat, neww, languages, tools) => {
   }
 };
 
-function filter(i, languageTyp) {
+function filter(languageTyp) {
+  let data_filter;
   for (let i = 0; i < JobListAsJson.length; i++) {
-    const element = JobListAsJson[i];
-    let data_filter = JobListAsJson.filter(
-      (element) => element.languages[i] === "CSS"
+    data_filter = JobListAsJson.filter(
+      (element) =>
+        element.languages[0] == languageTyp ||
+        element.languages[1] == languageTyp ||
+        element.languages[2] == languageTyp ||
+        element.languages[3] == languageTyp ||
+        element.languages[4] == languageTyp
     );
-    console.log(languageTyp);
-    console.log("datefilter:", data_filter);
   }
+  console.log(languageTyp);
+  console.log("datafilter:", data_filter);
+}
+
+function filter1(language) {
+  console.log("language:", language);
+  console.log("JsonJobs:", JobListAsJson);
 }
