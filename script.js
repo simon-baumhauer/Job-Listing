@@ -1,12 +1,13 @@
+let JobListAsJson;
+let element = "";
+
 let allJobs = async () => {
   let url = "data.json";
   let JobList = await fetch(url);
-  let JobListAsJson = await JobList.json();
-  console.log(JobListAsJson);
+  JobListAsJson = await JobList.json();
+  console.log("jsonData", JobListAsJson);
   rederJobsList(JobListAsJson);
 };
-
-let element = "";
 
 let rederJobsList = (JobListAsJson) => {
   JobCardContainer = document.getElementById("JobCardContainer");
@@ -39,7 +40,7 @@ let rederJobsList = (JobListAsJson) => {
     <span class="languages" id="languages${i}"></span>
     <span class="skills">${element.role}</span>
     <span class="skills">${element.level}</span>
-    <span id="tools${i}" ></span>
+    <span id="tools${i}"></span>
     </div>
     </div>`;
     rederNew(
@@ -66,7 +67,7 @@ let rederNew = (i, feat, neww, languages, tools) => {
 
   for (let i = 0; i < languages.length; i++) {
     const languageTyp = languages[i];
-    languagesId.innerHTML += `<span style = "margin-right: 5px;">${languageTyp}</span>`;
+    languagesId.innerHTML += `<span onclick="filter(${i}, ${languageTyp})"  style = "margin-right: 5px;">${languageTyp}</span>`;
   }
   if (tools) {
     for (let i = 0; i < tools.length; i++) {
@@ -75,3 +76,14 @@ let rederNew = (i, feat, neww, languages, tools) => {
     }
   }
 };
+
+function filter(i, languageTyp) {
+  for (let i = 0; i < JobListAsJson.length; i++) {
+    const element = JobListAsJson[i];
+    let data_filter = JobListAsJson.filter(
+      (element) => element.languages[i] === "CSS"
+    );
+    console.log(languageTyp);
+    console.log("datefilter:", data_filter);
+  }
+}
