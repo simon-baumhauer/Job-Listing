@@ -1,5 +1,6 @@
 let JobListAsJson;
 let element = "";
+let JobCardContainer = document.getElementById("JobCardContainer");
 
 let allJobs = async () => {
   let url = "data.json";
@@ -11,7 +12,6 @@ let allJobs = async () => {
 
 let rederJobsList = (JobListAsJson) => {
   JobCardContainer = document.getElementById("JobCardContainer");
-
   for (let i = 0; i < JobListAsJson.length; i++) {
     element = JobListAsJson[i];
     JobCardContainer.innerHTML += `
@@ -91,9 +91,6 @@ function filter(languageTyp) {
   }
   console.log(languageTyp);
   console.log("datafilter:", data_filter);
-}
-
-function filter1(language) {
-  console.log("language:", language);
-  console.log("JsonJobs:", JobListAsJson);
+  JobCardContainer.innerHTML = "";
+  rederJobsList(data_filter);
 }

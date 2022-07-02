@@ -96,6 +96,7 @@ header > img {
   background-color: hsl(180, 52%, 96%);
   padding: 5px;
   margin-right: 5px;
+  cursor: pointer;
 }
 
 .job-description > div {
